@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <SplitPane dividerPositions="0.15, 0.85" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0">
+         <items>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <FlowPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2">
+                     <children>
+                        <TextField fx:id="newFileNameField" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="28.0" prefWidth="267.0" promptText="File Name" />
+                        <PasswordField fx:id="newFilePasswordField" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="28.0" prefWidth="267.0" promptText="File Password" />
+                        <Button fx:id="newFileButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#createNewFile" prefHeight="29.0" prefWidth="267.0" text="Create A New File" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="passwordPromptText" alignment="CENTER" editable="false" prefHeight="28.0" prefWidth="267.0" styleClass="EnterPasswordPromptText" text="Enter The Password Below" />
+                        <PasswordField fx:id="filePasswordField" alignment="CENTER" prefHeight="28.0" prefWidth="267.0" promptText="File Password" />
+                        <Button fx:id="fileSelectButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#selectFile" prefHeight="29.0" prefWidth="267.0" text="Select File" />
+                     </children>
+                  </FlowPane>
+                  <TextField fx:id="fileSelectText" alignment="CENTER" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="28.0" prefWidth="267.0" styleClass="CurrentFile" text="SELECT A FILE" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+            <TableView fx:id="dataTable" prefHeight="400.0" prefWidth="800.0">
+              <columns>
+                <TableColumn fx:id="nameColumn" onEditCommit="#onNameEdit" prefWidth="160.0" text="NAME" />
+                <TableColumn fx:id="passwordColumn" onEditCommit="#onPasswordEdit" prefWidth="160.0" text="PASSWORD" />
+                  <TableColumn fx:id="loginColumn" onEditCommit="#onLoginEdit" prefWidth="160.0" text="LOGIN" />
+                  <TableColumn fx:id="domainColumn" onEditCommit="#onDomainEdit" prefWidth="160.0" text="DOMAIN" />
+                  <TableColumn fx:id="categoryColumn" onEditCommit="#onCategoryEdit" prefWidth="160.0" text="CATEGORY" />
+              </columns>
+            </TableView>
+            <FlowPane minHeight="90.0" minWidth="800.0" prefHeight="90.0" prefWidth="800.0">
+               <children>
+                  <TextField fx:id="newNameTextField" prefHeight="30.0" prefWidth="160.0" promptText="Name" />
+                  <TextField fx:id="newPasswordTextField" prefHeight="30.0" prefWidth="160.0" promptText="Password" />
+                  <TextField fx:id="newLoginTextField" prefHeight="30.0" prefWidth="160.0" promptText="Login" />
+                  <TextField fx:id="newDomainTextField" prefHeight="30.0" prefWidth="160.0" promptText="Domain" />
+                  <TextField fx:id="newCategoryTextField" prefHeight="30.0" prefWidth="160.0" promptText="Category" />
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#addButtonAction" prefHeight="30.0" prefWidth="800.0" text="Add" />
+                  <Button fx:id="removeButton" mnemonicParsing="false" onAction="#removeButtonAction" prefHeight="31.0" prefWidth="400.0" text="Remove" textAlignment="CENTER" />
+                  <Button fx:id="removeCategoryButton" mnemonicParsing="false" onAction="#removeCategoryButtonAction" prefHeight="31.0" prefWidth="400.0" text="Remove Category" textAlignment="CENTER" />
+               </children>
+            </FlowPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

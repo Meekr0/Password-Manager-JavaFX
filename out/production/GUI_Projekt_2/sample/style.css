@@ -1,0 +1,21 @@
+TextField.CurrentFile{
+    -fx-font-size: 14px Helvetica;
+    -fx-background-color: #b8b8b8;
+}
+TextField.EnterPasswordPromptText{
+    -fx-background-color: #eeeeee;
+    -fx-font: 12px Arial;
+}
+Button{
+    -fx-background-radius: 0px;
+    -fx-font: 12px Arial;
+}
+TextField{
+    -fx-background-radius: 0px;
+    -fx-font: 12px Helvetica;
+    -fx-prompt-text-fill: gray;
+}
+PasswordField{
+    -fx-background-radius: 0px;
+    -fx-prompt-text-fill: gray;
+}
